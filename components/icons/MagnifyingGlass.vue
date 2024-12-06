@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TIconType } from '~/types/icon';
+import type { TIconType } from '~/types/ui/icon';
 
 defineProps<{
     type: TIconType

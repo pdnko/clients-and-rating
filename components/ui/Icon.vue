@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TIconType, TIconSize } from '~/types/icon';
+import type { TIconType, TIconSize } from '~/types/ui/icon';
 
 const props = withDefaults(
 	defineProps<{
@@ -20,10 +20,10 @@ const props = withDefaults(
 	},
 );
 
-const icons = import.meta.glob('~/components/icon/*.vue');
+const icons = import.meta.glob('~/components/icons/*.vue');
 
 const iconComponent = computed(() => {
-	const iconPath = `/components/icon/${props.name}.vue`;
+	const iconPath = `/components/icons/${props.name}.vue`;
 
 	return icons[iconPath] ?
 		defineAsyncComponent(icons[iconPath] as () => Promise<typeof import('*.vue')>) :
