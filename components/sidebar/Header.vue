@@ -1,13 +1,33 @@
 <template>
-	<div class="flex flex-col gap-4 bg-sky-100 p-2">
+	<div class="flex flex-col gap-4 bg-sky-100 p-3">
 		<div class="flex items-center gap-1 rounded bg-gray-200 p-0.5">
-			<button class="flex-grow bg-white rounded">Clients</button>
-			<button class="flex-grow bg-white rounded">Rating</button>
+			<button
+				v-for="(view, index) in views"
+				:key="index"
+				class="flex-grow text-xs font-medium capitalize rounded py-1"
+				:class="[view === listView ? 'bg-white' : 'bg-transparent']"
+				@click="switchListView(view)"
+			>
+				{{ view }}
+			</button>
 		</div>
 
-		<input
-			class="rounded"
-			placeholder="Enter username to search"
-		>
+		<label for="search" class="relative">
+			<input
+				id="search"
+				type="text"
+				class="w-full border border-gray-200 rounded py-1 pl-8 pr-2"
+				placeholder="Enter username to search"
+			>
+
+			<UiIcon
+				class="absolute inset-y-0 left-2 my-auto"
+				name="MagnifyingGlass"
+			/>
+		</label>
 	</div>
 </template>
+
+<script setup lang="ts">
+const { views, listView, switchListView } = useList();
+</script>
