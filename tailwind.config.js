@@ -11,6 +11,12 @@ export default {
 	],
 	theme: {
 		extend: {
+			screens: {
+				mob: '375px',
+			},
+			transitionProperty: {
+				padding: 'padding',
+			},
 		},
 	},
 	plugins: [],

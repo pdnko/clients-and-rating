@@ -1,13 +1,17 @@
 <template>
 	<NuxtLink
-		class="group shrink-0 grid grid-cols-[1fr_3fr_1fr] items-center gap-4 cursor-pointer hover:bg-sky-100 transition-colors p-4"
+		class="
+			group shrink-0 grid grid-cols-[1fr_3fr_1fr] items-center gap-4
+			cursor-pointer hover:bg-sky-100 transition-colors p-4
+		"
+		active-class="bg-sky-300 hover:bg-sky-300"
 		:to="`/clients/${client.id}`"
 	>
 		<p
 			v-if="showRating"
 			class="text-4xl text-center"
 		>
-			5
+			{{ client.points }}
 		</p>
 		<img
 			v-else
@@ -27,10 +31,10 @@
 </template>
 
 <script setup lang="ts">
-import type { Client } from '~/types/client';
+import type { ClientWithDetails } from '~/types/client';
 
 const props = defineProps<{
-	client: Client
+	client: ClientWithDetails
 	showRating?: boolean
 }>();
 

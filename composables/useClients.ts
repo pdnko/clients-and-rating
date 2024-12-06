@@ -10,8 +10,8 @@ export function useClients() {
 		error,
 		execute: fetchClients,
 	} = useLazyAsyncData(() => clientApi.getClients().then((res) => {
-		return clients.value = res.data || [];
-	}));
+		return clients.value = res.data;
+	}), { server: true });
 
 	return {
 		clients,
