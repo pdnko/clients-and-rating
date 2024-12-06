@@ -3,13 +3,15 @@
 		class="text-white bg-sky-600 hover:bg-sky-800 transition-colors rounded p-2"
 		@click="emit('click', $event)"
 	>
-		{{ label }}
+		<slot>
+			{{ label }}
+		</slot>
 	</button>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-	label: string
+	label?: string
 }>();
 
 const emit = defineEmits<{
