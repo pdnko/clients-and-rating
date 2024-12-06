@@ -1,13 +1,13 @@
 <template>
-	<div class="flex flex-col items-center gap-4 bg-white rounded-lg py-6 px-10 sm:px-4">
-		<div class="flex flex-col sm:flex-row items-center gap-4">
+	<div class="mob:w-full sm:w-auto flex flex-col items-center gap-4 bg-white rounded-lg py-6 px-10 sm:px-4">
+		<div class="w-full flex flex-col sm:flex-row items-center gap-4">
 			<img
-				class="size-36 rounded-lg"
+				class="mob:size-44 sm:size-36 rounded-lg"
 				:src="client.avatar"
 				:alt="client.email"
 			>
 
-			<div class="flex flex-col">
+			<div class="mob:w-full sm:w-auto mob:max-w-80 sm:max-w-none flex flex-col">
 				<p class="text-2xl leading-none font-medium">
 					{{ client.last_name }} {{ client.first_name }}
 				</p>
@@ -52,7 +52,7 @@
 		</div>
 
 		<UiButton
-			class="w-2/3"
+			class="mob:w-4/5 sm:w-2/3"
 			label="Save"
 			:loading="loading"
 			@click="handleClickSave"
