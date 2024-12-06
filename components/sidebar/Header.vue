@@ -1,6 +1,6 @@
 <template>
-	<div class="flex flex-col gap-4 bg-sky-100 p-3">
-		<div class="flex items-center gap-1 rounded bg-gray-200 p-0.5">
+	<div class="flex flex-col gap-3 bg-sky-600 p-3">
+		<div class="flex items-center gap-1 rounded bg-gray-200 p-1">
 			<button
 				v-for="(view, index) in views"
 				:key="index"
