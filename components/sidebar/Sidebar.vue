@@ -1,9 +1,12 @@
 <template>
-	<div class="sticky top-0 w-60 h-screen flex flex-col">
+	<div class="sticky top-0 w-72 h-screen flex flex-col shadow-lg shadow-gray-600">
 		<SidebarHeader />
 
 		<ClientList />
 
-		<button>Update List</button>
+		<UiButton
+			class="my-4 mx-4"
+			label="Update list"
+		/>
 	</div>
 </template>
